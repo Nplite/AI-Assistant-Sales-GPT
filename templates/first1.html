@@ -1,0 +1,33 @@
+<!-- first.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sales Conversation</title>
+</head>
+<body>
+    <h1>Sales Conversation</h1>
+    <div>
+        <form action="/sales_conversation" method="post">
+            <label for="config">Agent Config Path:</label>
+            <input type="text" name="config" id="config">
+            <br>
+            <label for="verbose">Verbose (True/False):</label>
+            <input type="text" name="verbose" id="verbose">
+            <br>
+            <label for="max_num_turns">Max Number of Turns:</label>
+            <input type="text" name="max_num_turns" id="max_num_turns">
+            <br>
+            <input type="submit" value="Start Conversation">
+        </form>
+    </div>
+    {% if conversation_output %}
+        <h2>Conversation Output:</h2>
+        <ul>
+            {% for message in conversation_output %}
+                <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+</body>
+</html>
