@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sales GPT</title>
+</head>
+
+<body>
+    <h1>Welcome to Sales GPT</h1>
+    <form action="{{url_for('generate_response')}}" method="post" enctype="multipart/form-data">
+        <label for="user_input">User Input:</label>
+        <input type="text" id="user_input" name="user_input">
+        <button type="submit">Generate Response</button>
+    </form>
+
+ 
+        <div>
+            <h2>Generated Response:</h2>
+            <p>{{ response }}</p>
+        </div>
+
+</body>
+
